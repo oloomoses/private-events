@@ -1,0 +1,28 @@
+<p id = "alert"><%= alert %></p>
+<h1>Login</h1>
+
+<%= form_tag sessions_path do |f|%>
+  <div class = "field">
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+  </div>
+
+  <div class = "username">
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+  </div>
+
+  <div class = "actions">
+    <%= submit_tag "Login"%>
+  </div>
+
+  OR
+
+  <div class = "actions">
+    <%= link_to "sign Up", new_user_path %>
+  </div>
+
+<% end %>
+
+
+
