@@ -1,17 +1,17 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  before_action :current_user?, only: [:new]
-
   # GET /users
   # GET /users.json
   def index
+    redirect_to login_path if !logged_in?
     @users = User.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    redirect_to login_path if !logged_in?
   end
 
   # GET /users/new
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    redirect_to login_path if !logged_in?
   end
 
   # POST /users
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -56,6 +58,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    redirect_to login_path if !logged_in?
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
