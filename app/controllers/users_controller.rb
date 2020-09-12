@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     redirect_to login_path if !logged_in?
-    @event = @user.events 
+    @events = @user.events 
   end
 
   # GET /users/new

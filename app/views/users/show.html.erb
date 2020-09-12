@@ -7,10 +7,17 @@
 
 <p>
   <strong>Username:</strong>
-  <%= @user.username %>
+  <%= @user.username %> 
 </p>
+
+<% @events.each do |event| %>
+  <h2><%= event.name %></h2>
+  <p><%= event.description %></p>
+<% end %>
 
 <% if logged_in? && current_user == @user %>
   <%= link_to 'Edit', edit_user_path(@user) %> |
 <% end %>
 <%= link_to 'Back', users_path %>
+
+<%= link_to 'Event', event_path %>
