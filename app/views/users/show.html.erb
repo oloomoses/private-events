@@ -11,12 +11,25 @@
 </p>
 
 <% @events.each do |event| %>
-  <h2><%= event.name %></h2>
-  <p><%= event.description %></p>
+  <p>
+    <strong>Name:</strong>
+    <%= event.name %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= event.description %>
+  </p>
+  <p>
+    <strong>Date</strong>
+    <%= event.date %>
+  </p>
+
+  <%= link_to 'Show Event', event_path(@event) %><br>
+
 <% end %>
 
 <% if logged_in? && current_user == @user %>
-  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Edit', edit_user_path(@user) %>
 <% end %>
 <%= link_to 'Back', users_path %>
 

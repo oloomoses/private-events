@@ -10,15 +10,20 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
   </div>
 
   <div class="actions">
