@@ -11,7 +11,7 @@
 </p> -->
 
 <p>
-  <strong><%= @event.current_user %></strong>
+  <%= @event.user.username %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
