@@ -29,4 +29,4 @@ ActiveRecord::Schema.define(version: 2020_09_11_194139) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-end
+end 
