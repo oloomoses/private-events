@@ -4,19 +4,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    redirect_to login_path if !logged_in?
     @users = User.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    redirect_to login_path if !logged_in?
-<<<<<<< HEAD
-    @events = @user.events 
-=======
     @events = @user.events
->>>>>>> 340606a641f23043ce52f53c9c4d9eab1ef3cd98
   end
 
   # GET /users/new
@@ -26,7 +20,6 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    redirect_to login_path if !logged_in?
   end
 
   # POST /users
@@ -63,7 +56,6 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    redirect_to login_path if !logged_in?
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }

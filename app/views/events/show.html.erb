@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<!-- <p>
   <strong>Date:</strong>
   <%= @event.date %>
 </p>
@@ -8,6 +8,10 @@
 <p>
   <strong>Description:</strong>
   <%= @event.description %>
+</p> -->
+
+<p>
+  <strong><%= @event.current_user %></strong>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
