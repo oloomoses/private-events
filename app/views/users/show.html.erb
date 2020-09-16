@@ -24,6 +24,14 @@
     <%= event.date %>
   </p>
 
+
+<p>
+  <h3>Events Attended By the: <%= @user.name %></h3>
+
+  <%= @user.attended_events %>
+</p>
+
+
   <%= link_to 'Show Event', event_path(@event) %><br>
 
 <% end %>

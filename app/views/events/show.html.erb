@@ -14,6 +14,12 @@
   <%= @event.description %>
 </p>
 
+<p>
+  <h3>Events Attendees</h3>
+
+  <%= @event.attendees %>
+</p>
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
