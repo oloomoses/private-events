@@ -7,6 +7,7 @@
   <% @upcoming_events.each do |event| %>
     Event: <%= event.description %>
     Event Date: <%= event.date %>
+    <%= link_to 'Attend this event', new_current_event_path, class: 'btn btn-default btn-sm'%>
     <%= link_to 'Show', event %>
   <% end %>
 </p>
@@ -19,5 +20,3 @@
     <%= link_to 'Show', event %>
   <% end %>
 </p>
-
-<%= link_to 'New Event', new_event_path %>
