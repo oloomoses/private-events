@@ -14,10 +14,13 @@
   <%= @event.description %>
 </p>
 
+
 <p>
   <h3>Events Attendees</h3>
 
-  <%= @event.attendees %>
+  <% @attendees.each do |attendee| %>
+    <%= attendee.name %>
+  <% end %>
 </p>
 
 
