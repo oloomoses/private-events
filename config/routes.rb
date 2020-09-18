@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'login',  to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :current_events, only: [:new, :create]
+  # resources :current_events, only: [:new, :create]
+
+  post 'attend', to: 'events#attend_event'
 
 end

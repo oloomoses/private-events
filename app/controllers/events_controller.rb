@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :attend_event, :destroy]
   before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /events
@@ -38,6 +38,17 @@ class EventsController < ApplicationController
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def attend_event
+    if !already_attendee?
+      @event.attendees << current_user
+      redirect_back fallback_location: :back
+      flash[:notice] = 'Success!'
+    else
+      redirect_back fallback_location: :back
+      flash[:notice] = "You are already a member. You can only register once!"
     end
   end
 

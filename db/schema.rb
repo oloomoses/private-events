@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_09_16_164411) do
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.integer "creator_id"
   end
 
