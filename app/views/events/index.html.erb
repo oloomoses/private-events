@@ -1,23 +1,50 @@
+
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<h1 class = "text-center">Events</h1>
+<h3 class = "text-center">Upcoming Events</h3>
 
-<p>
-  <h3>Upcoming Events</h3>
-  <% @upcoming_events.each do |event| %>
-    Event: <%= event.description %>
-    Event Date: <%= event.date %>
+<div class = "row">
     
-    <%= link_to 'Attend this event', { :controller => 'events', :action => 'attend_event', :id => event.id }, method: :post, class: 'btn btn-default btn-sm'%>
-    <%= link_to 'Show', event %>
-  <% end %>
-</p>
+    <% @upcoming_events.each do |event| %>
+      <div class = "col-md-3 mt-3 mb-3">
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Event Title: <%= event.name %></h5>
+              <p class="card-text">Event: <%= event.description %></p>
+              <p>Event Date: <%= event.date %></p>
+            </div>
+            <div class="card-footer">
+              <%= link_to 'Attend this event', { :controller => 'events', :action => 'attend_event', :id => event.id }, method: :post, class: 'btn btn-default'%>
+              <%= link_to 'Show', event, class: "btn btn-default" %>
+            </div>
+          </div>
+        </div> 
+    </div>
+    <% end %> 
 
-<p>
-  <h3>Past Events</h3>
-  <% @past_events.each do |event| %>
-    Event: <%= event.description %>
-    Event Date: <%= event.date %>
-    <%= link_to 'Show', event %>
-  <% end %>
-</p>
+</div>
+<hr>
+<h3 class = "text-center">Past Events</h3>
+<div class = "row">
+    
+    <% @past_events.each do |event| %>
+      <div class = "col-md-3 mt-3 mb-3">
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Event Title: <%= event.name %></h5>
+              <p class="card-text">Event: <%= event.description %></p>
+              <p>Event Date: <%= event.date %></p>
+            </div>
+            <div class="card-footer">
+              <%= link_to 'Show', event, class: "btn btn-default" %>
+            </div>
+          </div>
+        </div> 
+    </div>
+    <% end %> 
+
+</div>
+

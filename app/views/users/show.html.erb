@@ -15,11 +15,11 @@
 </p>
 
 <br>
-
-<% @events.each do |event| %>
-  <p>
-    <h2>Events:</h2>
+<p>
+    <h3>Created Events:</h3>
   </p>
+<% @events.each do |event| %>
+  
   <p>
     <strong>Description:</strong>
     <%= event.description %>
@@ -31,18 +31,18 @@
   <%= link_to 'Show Event', event_path(event) %><br>
 
 <% end %>
-
+<hr>
 <p>
-  <h3>Upcoming Events</h3>
+  <h3>Upcoming Events to Attend</h3>
   <% @upcoming_events.each do |event| %>
     Event: <%= event.description %>
     Event Date: <%= event.date %>
   <% end %>
 </p>
-
+<hr>
 
 <p>
-  <h3>Past Events</h3>
+  <h3>Past Attended Events</h3>
   <% @prev_events.each do |event| %>
     Event: <%= event.description %>
     Event Date: <%= event.date %>
