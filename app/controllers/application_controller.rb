@@ -10,14 +10,12 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    redirect_to root_path if !logged_in?
-    flash[:notice] = "You must be logged in to perform this action"
+    redirect_to root_path unless logged_in?
+    flash[:notice] = 'You must be logged in to perform this action'
   end
 
   def already_attendee?
     attendees = @event.attendees
     attendees.include?(current_user)
   end
-  
 end
-  
