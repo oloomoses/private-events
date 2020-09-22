@@ -1,6 +1,4 @@
-# private-events
-
-# Members Only
+# Private Events
 
 ## Description
 This project is similar to Eventbrite, which allows users to create events and them manage user signups. Users can create events and send invitations and parties (sounds familiar?). Events take place at a specific date and location (which you can just store as a string, like “Andy’s House”).  A user can create events. A user can attend many events. An event can be attended by many users.
