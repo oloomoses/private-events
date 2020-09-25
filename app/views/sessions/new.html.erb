@@ -1,0 +1,31 @@
+<div class = "row">
+  <div class = "col-md-6 offset-md-3 mt-5">
+
+      <p id = "alert"><%= alert %></p>
+      <h1 class = "text-center mt-5">Login</h1>
+
+      <%= form_tag sessions_path do |f|%>
+        <div class = "form-group">
+          <%= label_tag :name %><br>
+          <%= text_field_tag :name, "", class: 'form-control' %><br>
+        </div>
+
+        <div class = "form-group">
+          <%= label_tag :username %><br>
+          <%= text_field_tag :username, "", class: 'form-control' %><br>
+        </div>
+
+        <div class = "form-group">
+          <%= submit_tag "Login"%>
+        </div>
+
+        OR
+
+        <div class = "form-group">
+          <%= link_to "sign Up", new_user_path %>
+        </div>
+
+      <% end %>
+  </div>
+</div>
+

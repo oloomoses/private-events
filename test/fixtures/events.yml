@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyFirstString
+  description: MyFirstStringText
+  date: 2020-09-11  
+
+two:
+  name: MySecondString
+  description: MySecondStringText
+  date: 2020-09-11  
